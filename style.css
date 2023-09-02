@@ -33,7 +33,7 @@ input {
     width: 200px;
     margin: 10px;
     padding: 10px;
-    box-shadow: 0 0 10px green;
+    box-shadow: 0 0 15px aquamarine;
     border-radius: 10px;
     border: 0;
 }
@@ -51,4 +51,5 @@ a {
     background-color: aqua;
     box-shadow: 0 0 10px aqua;
     border-radius: 15px;
+    color: blue;
 }

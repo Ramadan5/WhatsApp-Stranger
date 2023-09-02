@@ -9,6 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+        <link href="manifest.json" rel="manifest" />
+        <script src="service-worker.js" defer></script>
         <meta property="og:title" content="WhatsApp Stranger" />
         <meta property="og:description" content="Chat instantly without saving the number!" />
         <meta property="og:type" content="website" />
@@ -22,7 +25,6 @@
         <meta name="twitter:image" content="https://ramadan5.github.io/WhatsApp-Stranger/Whatsapp-logo.png" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=yes" />
-        <link href="manifest.json" rel="manifest" />
     </head>
     <body>
         <form>
@@ -31,23 +33,5 @@
             <input type="tel" name="number" id="number">
             <a href="" target="_blank">Chat</a>
         </form>
-
-        <script>
-            const input = document.querySelector ("input");
-
-            input.addEventListener ("input", (e) => {
-                e.preventDefault();
-
-                if (input.value[0] != 0) {
-                    input.value = "0" + input.value;
-                }
-
-                if (input.value == 0) {
-                    input.value = "";
-                }
-
-                document.querySelector ("a").setAttribute ("href", "https://wa.me/+2" + input.value.replace (/ /g, ""));
-            });
-        </script>
     </body>
 </html>
