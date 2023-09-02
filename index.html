@@ -34,6 +34,10 @@
             input.addEventListener ("input", (e) => {
                 e.preventDefault();
 
+                if (input.value[0] != 0) {
+                input.value = "0" + input.value;
+            }
+
                 document.querySelector ("a").setAttribute ("href", "https://wa.me/+2" + input.value.replace (/ /g, ""));
             })
         </script>
