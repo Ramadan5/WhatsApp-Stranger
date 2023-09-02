@@ -5,11 +5,12 @@
     "icons": [
         {
             "src": "Whatsapp-logo.png",
-            "sizes": "32x32",
+            "sizes": "144x144",
             "type": "image/png"
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "./",
+    "scope": "./",
     "display": "standalone",
     "theme_color": "#00ff73",
     "background_color": "#00ff73"
