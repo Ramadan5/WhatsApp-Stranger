@@ -1,0 +1,15 @@
+{
+    "short_name": "WhatsApp Stranger",
+    "name": "WhatsApp Stranger",
+    "description": "Chat instantly without saving the number!",
+    "icons": [
+        {
+            "src": "Whatsapp-logo.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "theme-color": "#00ff73",
+}
