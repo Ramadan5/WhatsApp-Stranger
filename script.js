@@ -3,19 +3,19 @@ const phoneBtn = document.getElementById ("phone");
 
 const props = ["tel"];
 
-const opts = {multiple: false};
+const opts = {multiple: true};
 
-const supported = ("phone" in navigator && "PhoneManager" in window);
+const supported = ("contacts" in navigator && "ContactsManager" in window);
 
 async function getNumber () {
     if (supported) {
-        const phone = await navigator.phone.select (props, opts);
+        const contacts = await navigator.contacts.select (props, opts);
     }
 }
 
 phoneBtn.addEventListener ("click", () => {
     getNumber ()
-    input.value = phone; 
+    input.value = contacts; 
 });
 
 
