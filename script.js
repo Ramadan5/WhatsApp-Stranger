@@ -1,4 +1,24 @@
 const input = document.querySelector ("input");
+const phoneBtn = document.getElementById ("phone");
+
+const props = ["tel"];
+
+const opts = {multiple: false};
+
+const supported = ("phone" in navigator && "PhoneManager" in window);
+
+async function getNumber () {
+    if (supported) {
+        const phone = await navigator.phone.select (props, opts);
+    }
+}
+
+phoneBtn.addEventListener ("click", () => {
+    getNumber ()
+    input.value = phone; 
+});
+
+
 
 input.addEventListener ("input", (e) => {
     e.preventDefault();

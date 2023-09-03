@@ -53,3 +53,17 @@ a {
     border-radius: 15px;
     color: blue;
 }
+
+#phone {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    text-decoration: none;
+    text-align: center;
+    background-color: aqua;
+    box-shadow: 0 0 10px aqua;
+    border-radius: 15px;
+    color: blue;
+    cursor: pointer;
+}
