@@ -1,22 +1,46 @@
+import { Platform } from 'react-native';
+import * as Permissions from 'expo-permissions';
+import * as IntentLauncher from 'expo-intent-launcher';
+
 const input = document.querySelector ("input");
 const phoneBtn = document.getElementById ("phone");
 
-const props = ["tel"];
 
-const opts = {multiple: true};
+const { status } = await Permissions.askAsync(Permissions.PHONE);
+if (status !== 'granted') {
+  alert('Permission to access the phone application was denied.');
+  return;
+}
 
-const supported = ("phone" in navigator && "PhoneManager" in window);
+if (Platform.OS === 'ios') {
+    await IntentLauncher.startActivityAsync('tel:');
+} 
+else if (Platform.OS === 'android') {
+    await IntentLauncher.startActivityAsync('tel:');
+}
 
-async function getNumber() {
-    if (supported) {
-        const phone = await navigator.phone.select (props, opts);
-    }
-};
+if (Platform.OS === 'ios') {
+    await IntentLauncher.startActivityAsync('tel:');
+} 
+else if (Platform.OS === 'android') {
+    await IntentLauncher.startActivityAsync('tel:');
+}
 
-phoneBtn.addEventListener ("click", () => {
-    getNumber();
-    document.body = phone;
-});
+// const props = ["tel"];
+
+// const opts = {multiple: true};
+
+// const supported = ("phone" in navigator && "PhoneManager" in window);
+
+// async function getNumber() {
+//     if (supported) {
+//         const phone = await navigator.phone.select (props, opts);
+//     }
+// };
+
+// phoneBtn.addEventListener ("click", () => {
+//     getNumber();
+// });
 
 
 input.addEventListener ("input", (e) => {
