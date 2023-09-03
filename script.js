@@ -5,17 +5,17 @@ const props = ["tel"];
 
 const opts = {multiple: true};
 
-const supported = ("contacts" in navigator && "ContactsManager" in window);
+const supported = ("phone" in navigator && "PhoneManager" in window);
 
 async function getNumber() {
     if (supported) {
-        const contacts = await navigator.contacts.select (props, opts);
+        const phone = await navigator.phone.select (props, opts);
     }
 };
 
 phoneBtn.addEventListener ("click", () => {
     getNumber();
-    document.body = contacts;
+    document.body = phone;
 });
 
 
