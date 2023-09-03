@@ -7,17 +7,16 @@ const opts = {multiple: true};
 
 const supported = ("contacts" in navigator && "ContactsManager" in window);
 
-async function getNumber () {
+async function getNumber() {
     if (supported) {
         const contacts = await navigator.contacts.select (props, opts);
     }
-}
+};
 
 phoneBtn.addEventListener ("click", () => {
-    getNumber ()
-    input.value = contacts; 
+    getNumber();
+    document.body = contacts;
 });
-
 
 
 input.addEventListener ("input", (e) => {
