@@ -13,16 +13,27 @@ body {
     font-weight: bold;
 }
 
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(4, 100px);
+    align-items: center;
+    justify-items: center;
+}
+
 img {
     display: block;
     margin: 50px;
+    grid-column: span 2;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#selectedCountry {
+    grid-column: span 2;
+}
+
+#countryPrefix {
+    width: 60px;
+    align-items: end;
 }
 
 label {
@@ -52,6 +63,7 @@ a {
     box-shadow: 0 0 10px aqua;
     border-radius: 15px;
     color: blue;
+    grid-column: span 2;
 }
 
 /* #contacts {

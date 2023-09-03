@@ -1,17 +1,43 @@
-const input = document.querySelector ("input");
+import data from "./countries.json" assert {type: 'json'}; 
+
+const selectedCountry = document.getElementById ("selectedCountry");
+const countryPrefix = document.getElementById ("countryPrefix");
+const input = document.querySelector ("#number");
+
+const countries = [];
+const countryDialCodes = [];
+
+for (let i = 0; i < data.length; i++) {
+    countries[i] = data[i].name;
+    let country = document.createElement ("option");
+    country.innerText = countries[i];
+    if (country.innerText == "Egypt") {
+        country.setAttribute ("selected", "");
+    }
+    selectedCountry.append (country);
+}
+
+selectedCountry.addEventListener ("change", () => {
+    for (let i = 0; i < data.length; i++) {
+        countries[i] = data[i].name;
+        countryDialCodes[i] = data[i].dial_code;
+
+        if (selectedCountry.options[selectedCountry.selectedIndex].text == countries[i]) {
+            countryPrefix.value = countryDialCodes[i];
+        }
+    }
+    document.querySelector ("a").setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
+});
+
 
 input.addEventListener ("input", (e) => {
     e.preventDefault();
 
-    if (input.value[0] != 0) {
-        input.value = "0" + input.value;
+    if (input.value[0] == 0) {
+        input.value = input.value - input.value[0];
     }
 
-    if (input.value == 0) {
-        input.value = "";
-    }
-
-    document.querySelector ("a").setAttribute ("href", "https://wa.me/+2" + input.value.replace (/ /g, ""));
+    document.querySelector ("a").setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 });
 
 if ('serviceWorker' in navigator) {

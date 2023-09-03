@@ -2,7 +2,7 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>WhatsApp Stranger</title>
+        <title>WhatsApp a Stranger</title>
         <meta name="description" content="Chat instantly without saving the number!">
         <link href="WhatsApp.svg" rel="icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +10,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
-        <script src="script.js" defer></script>
+        <script src="script.js" type="module" defer></script>
+        <!-- <script src="countries.js" type="module" defer></script> -->
         <link href="manifest.json" rel="manifest">
-        <meta property="og:title" content="WhatsApp Stranger">
+        <meta property="og:title" content="WhatsApp a Stranger">
         <meta property="og:description" content="Chat instantly without saving the number!">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://ramadan5.github.io/WhatsApp-Stranger/">
@@ -31,9 +32,14 @@
     <body>
         <form>
             <img src="WhatsApp.svg" width="100vw" alt="Whatsapp logo">
-            <label for="number">Enter phone number</label>
-            <input type="tel" name="number" id="number">
+            <select id="selectedCountry"></select>
+            <!-- <label for="number">Enter phone number</label> -->
+            <input type="text" id="countryPrefix" value="+20" disabled>
+            <input type="tel" name="number" id="number" placeholder="Enter phone number">
             <a href="#" target="_blank">Chat</a>
+
+            
+
             <!-- <button id="contacts">Select from Phone</button> -->
         </form>
     </body>
