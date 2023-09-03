@@ -1,47 +1,4 @@
-import { Platform } from 'react-native';
-import * as Permissions from 'expo-permissions';
-import * as IntentLauncher from 'expo-intent-launcher';
-
 const input = document.querySelector ("input");
-const phoneBtn = document.getElementById ("phone");
-
-
-const { status } = await Permissions.askAsync(Permissions.PHONE);
-if (status !== 'granted') {
-  alert('Permission to access the phone application was denied.');
-  return;
-}
-
-if (Platform.OS === 'ios') {
-    await IntentLauncher.startActivityAsync('tel:');
-} 
-else if (Platform.OS === 'android') {
-    await IntentLauncher.startActivityAsync('tel:');
-}
-
-if (Platform.OS === 'ios') {
-    await IntentLauncher.startActivityAsync('tel:');
-} 
-else if (Platform.OS === 'android') {
-    await IntentLauncher.startActivityAsync('tel:');
-}
-
-// const props = ["tel"];
-
-// const opts = {multiple: true};
-
-// const supported = ("phone" in navigator && "PhoneManager" in window);
-
-// async function getNumber() {
-//     if (supported) {
-//         const phone = await navigator.phone.select (props, opts);
-//     }
-// };
-
-// phoneBtn.addEventListener ("click", () => {
-//     getNumber();
-// });
-
 
 input.addEventListener ("input", (e) => {
     e.preventDefault();
@@ -60,3 +17,19 @@ input.addEventListener ("input", (e) => {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register ('./service-worker.js', {scope: './'});
 }
+
+
+// const contactsBtn = document.getElementById ("contacts");
+
+// const retreivableData = ['name', 'email', 'tel', 'address', 'icon'];
+// const multipleSelection = {multiple: true};
+
+// const supported = ("contacts" in navigator && "ContactsManager" in window);
+
+// async function getContacts() {
+//     if (supported) {
+//         const contacts = await navigator.contacts.select (retreivableData, multipleSelection);
+//     }
+// };
+
+// contactsBtn.addEventListener ("click", getContacts);
