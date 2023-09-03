@@ -31,14 +31,12 @@
     </head>
     <body>
         <form>
-            <img src="WhatsApp.svg" width="100vw" alt="Whatsapp logo">
+            <a href="https://www.whatsapp.com/" target="_blank" id="whatsApp_homePage"><img src="WhatsApp.svg" width="100vw" alt="Whatsapp logo"></a>
+            <label for="selectedCountry">Select Country:</label>
             <select id="selectedCountry"></select>
-            <!-- <label for="number">Enter phone number</label> -->
             <input type="text" id="countryPrefix" value="+20" disabled>
-            <input type="tel" name="number" id="number" placeholder="Enter phone number">
-            <a href="#" target="_blank">Chat</a>
-
-            
+            <input type="tel" id="number" placeholder="Enter phone number">
+            <a href="#" target="_blank" id="chat">Chat</a>
 
             <!-- <button id="contacts">Select from Phone</button> -->
         </form>

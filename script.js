@@ -2,7 +2,8 @@ import data from "./countries.json" assert {type: 'json'};
 
 const selectedCountry = document.getElementById ("selectedCountry");
 const countryPrefix = document.getElementById ("countryPrefix");
-const input = document.querySelector ("#number");
+const input = document.getElementById ("number");
+const chatBtn = document.getElementById ("chat");
 
 const countries = [];
 const countryDialCodes = [];
@@ -26,7 +27,7 @@ selectedCountry.addEventListener ("change", () => {
             countryPrefix.value = countryDialCodes[i];
         }
     }
-    document.querySelector ("a").setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
+    chatBtn.setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 });
 
 
@@ -37,7 +38,7 @@ input.addEventListener ("input", (e) => {
         input.value = input.value - input.value[0];
     }
 
-    document.querySelector ("a").setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
+    chatBtn.setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 });
 
 if ('serviceWorker' in navigator) {
