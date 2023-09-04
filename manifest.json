@@ -15,7 +15,7 @@
     "theme_color": "#00ff73",
     "background_color": "#00ff73",
     "share_target": {
-        "action": "./script.js",
+        "action": "/_share-target",
         "method": "POST",
         "enctype": "multiple/form-data",
         "params": {
@@ -25,7 +25,7 @@
             "files": [
                 {
                     "name": "number",
-                    "accept": ["text/*", ".csv", "plain"]
+                    "accept": ["text/*"]
                 }
             ]
         }
