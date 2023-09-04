@@ -13,5 +13,21 @@
     "scope": "./",
     "display": "standalone",
     "theme_color": "#00ff73",
-    "background_color": "#00ff73"
+    "background_color": "#00ff73",
+    "share_target": {
+        "action": "./script.js",
+        "method": "POST",
+        "enctype": "multiple/form-data",
+        "params": {
+            "title": "name",
+            "text": "description",
+            "url": "link",
+            "files": [
+                {
+                    "name": "number",
+                    "accept": "text/plain"
+                }
+            ]
+        }
+    }
 }
