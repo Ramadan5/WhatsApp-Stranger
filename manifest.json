@@ -25,7 +25,7 @@
             "files": [
                 {
                     "name": "number",
-                    "accept": "text/plain"
+                    "accept": ["text/*", ".csv", "plain"]
                 }
             ]
         }
