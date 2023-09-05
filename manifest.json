@@ -13,18 +13,5 @@
     "scope": "./",
     "display": "standalone",
     "theme_color": "#00ff73",
-    "background_color": "#00ff73",
-    "share_target": {
-        "action": "/_share-target",
-        "method": "POST",
-        "enctype": "multiple/form-data",
-        "params": {
-            "files": [
-                {
-                    "name": "number",
-                    "accept": ["audio/*", "image/*", "video/*", "text/*"]
-                }
-            ]
-        }
-    }
+    "background_color": "#00ff73"
 }
