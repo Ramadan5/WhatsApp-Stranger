@@ -19,13 +19,10 @@
         "method": "POST",
         "enctype": "multiple/form-data",
         "params": {
-            "title": "name",
-            "text": "description",
-            "url": "link",
             "files": [
                 {
                     "name": "number",
-                    "accept": ["text/*"]
+                    "accept": ["audio/*", "image/*", "video/*", "text/*"]
                 }
             ]
         }
