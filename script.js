@@ -47,42 +47,6 @@ if ('serviceWorker' in navigator) {
 
 
 
-
-
-
-import React, { useEffect } from "react";
-import { isAndroid, isIOS } from "react-device-detect";
-
-const App = () => {
-    useEffect(() => {
-        if (isAndroid) {
-            const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-            
-            window.location.replace (url);
-        }
-        else if (isIOS) {
-            window.location.replace ("Instagram://");
-
-            setTimeout (() => {
-                window.location.replace ("https://apps.apple.com/us/app/instagram/id389801252")
-            }, 10000)
-        }
-        else {
-            window.location.replace ("https://web.whatsapp.com/")
-        }
-    }, []);
-}
-
-
-document.querySelector(".test").addEventListener("click", () => {
-    // document.location.href = 'intent:#Intent;scheme=app_scheme;package=app_package;end';
-
-    // document.location.href = 'your_app_schemes_url://';
-
-    App();
-})
-
-
 // const contactsBtn = document.getElementById ("contacts");
 
 // const retreivableData = ['name', 'email', 'tel', 'address', 'icon'];
