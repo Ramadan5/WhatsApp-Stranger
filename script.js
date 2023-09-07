@@ -1,4 +1,4 @@
-import data from "./countries.json" assert {type: 'json'}; 
+import data from "./countries.json" assert {type: 'json'};
 
 const selectedCountry = document.getElementById ("selectedCountry");
 const countryPrefix = document.getElementById ("countryPrefix");
@@ -29,7 +29,6 @@ selectedCountry.addEventListener ("change", () => {
     }
     chatBtn.setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 });
-
 
 input.addEventListener ("input", (e) => {
     e.preventDefault();
