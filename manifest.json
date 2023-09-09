@@ -9,6 +9,15 @@
             "type": "image/png"
         }
     ],
+    "shortcuts": [
+        {
+            "name": "Whatsapp App",
+            "short_name": "Whatsapp App",
+            "description": "Opens the whatsapp application.",
+            "url": "./whatsapp-app.html",
+            "icons": [{"src": "Whatsapp-logo.png", "sizes": "144x144", "type": "image/png"}]
+        }
+    ],
     "start_url": "./",
     "scope": "./",
     "display": "standalone",
