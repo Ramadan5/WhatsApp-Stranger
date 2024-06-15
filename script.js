@@ -1,5 +1,5 @@
 // import data from "./countries.json" assert {type: 'json'};
-const data = JSON.parse ("./countries.json");
+const data = JSON.parse ("countries.json");
 const selectedCountry = document.getElementById ("selectedCountry");
 const countryPrefix = document.getElementById ("countryPrefix");
 const input = document.getElementById ("number");
