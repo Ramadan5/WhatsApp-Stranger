@@ -1,5 +1,5 @@
 // import data from "./countries.json" assert {type: 'json'};
-const data = JSON.parse ("countries.json");
+
 const selectedCountry = document.getElementById ("selectedCountry");
 const countryPrefix = document.getElementById ("countryPrefix");
 const input = document.getElementById ("number");
@@ -31,6 +31,13 @@ const countryDialCodes = [];
 //         chatBtn.setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 //     });
 // })
+
+const {readFile} = require('fs');
+const { json } = require('stream/consumers');
+
+readFile ('./countries.json', 'utf-8', (jsonFile) => {
+    const data = JSON.parse (jsonFile)
+});
 
 for (let i = 0; i < data.length; i++) {
     countries[i] = data[i].name;
