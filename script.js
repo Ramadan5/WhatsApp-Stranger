@@ -32,14 +32,10 @@ fetch ("./countries.json").then ((res) => res.json()).then ((data) => {
     });
 });
 
-input.addEventListener ("paste", () => {
-    navigator.clipboard.readText().then((pastedNumber) => {
-        input.value = pastedNumber.replace(/ /g, "");
-    });
-});
-
 input.addEventListener ("input", (e) => {
     e.preventDefault();
+    
+    input.value = input.value.replace (/ /g, "");
 
     if (input.value[0] == 0) {
         input.value = input.value - input.value[0];
@@ -75,6 +71,11 @@ if ('serviceWorker' in navigator) {
 //     chatBtn.setAttribute ("href", "https://wa.me/" + countryPrefix.value + input.value.replace (/ /g, ""));
 // });
 
+// input.addEventListener ("paste", () => {
+//     navigator.clipboard.readText().then((pastedNumber) => {
+//         input.value = pastedNumber.replace(/ /g, "");
+//     });
+// });
 
 // const contactsBtn = document.getElementById ("contacts");
 
